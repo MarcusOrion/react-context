@@ -2,6 +2,8 @@ import Header from "./components/layout/header";
 import Footer from "./layout/Footer";
 import MainPage from "./layout/MainPage";
 import Sidebar from "./layout/Sidebar";
+import CountContext from "./contenxts/CountContext";
+import { useState } from "react";
 
 /* 
 Creare una piccola web app in React con la struttura simile a quella vista a lezione: 
@@ -23,14 +25,36 @@ Bonus
 
     Mostrare accanto alla temperatura un'etichetta testuale (Freddo / Comfort / Caldo) calcolata dal valore, senza creare un secondo stato (derived state). */
 function App() {
+  const [temp, setTemp] = useState(20);
+
+  function handleAddCount() {
+    setTemp(temp < 28 ? temp + 1 : temp);
+  }
+
+  function handleReset() {
+    setTemp(20);
+  }
+
+  function handleSubCount() {
+    setTemp(temp > 16 ? temp - 1 : temp);
+  }
   return (
     <div className="app-shell">
-      <Header />
-      <div className="page-content">
-        <Sidebar />
-        <MainPage />
-      </div>
-      <Footer />
+      <CountContext.Provider
+        value={{
+          temp,
+          handleAddCount,
+          handleReset,
+          handleSubCount,
+        }}
+      >
+        <Header />
+        <div className="page-content">
+          <Sidebar />
+          <MainPage />
+        </div>
+        <Footer />
+      </CountContext.Provider>
     </div>
   );
 }

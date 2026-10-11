@@ -23,7 +23,9 @@ Bonus
 
     I pulsanti Più e Meno devono essere disabilitati quando si raggiunge il limite minimo o massimo
 
-    Mostrare accanto alla temperatura un'etichetta testuale (Freddo / Comfort / Caldo) calcolata dal valore, senza creare un secondo stato (derived state). */
+    Mostrare accanto alla temperatura un'etichetta testuale (Freddo / Comfort / Caldo) calcolata dal valore, senza creare un secondo stato (derived state). 
+    
+    Adattare ultimo esercizio assegnato (React Context API) con context , provider e custom hook in un file dedicato.*/
 function App() {
   const [temp, setTemp] = useState(20);
 

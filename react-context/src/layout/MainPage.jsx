@@ -10,13 +10,21 @@ export default function MainPage() {
         <h1 className="fw-bold fs-4">Counter</h1>
         <div className="display-1">{temp} °C</div>
         <div className="btn-group mt-3">
-          <div className="btn btn-info" onClick={handleSubCount}>
+          <div
+            className="btn btn-info"
+            onClick={handleSubCount}
+            disabled={temp < 16}
+          >
             Sub
           </div>
           <div className="btn btn-warning" onClick={handleReset}>
             Reset
           </div>
-          <div className="btn btn-info" onClick={handleAddCount}>
+          <div
+            className="btn btn-info"
+            onClick={handleAddCount}
+            disabled={temp > 28}
+          >
             Add
           </div>
         </div>

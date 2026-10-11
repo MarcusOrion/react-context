@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import CountContext from "../contenxts/CountContext";
+
 export default function Footer() {
+  const { temp } = useContext(CountContext);
   return (
-    <footer className="d-flex justify-content-center">
-      <p className="align-items-center">Lorem Ipsum &copy; 2026</p>
+    <footer className="d-flex flex-column align-items-center">
+      <p className="mb-1">Lorem Ipsum &copy; 2026</p>
+      <div className="badge text-bg-info px-2 py-2 mb-3">{temp} °C</div>
     </footer>
   );
 }

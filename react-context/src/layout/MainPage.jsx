@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CountContext from "../contenxts/CountContext";
 
 export default function MainPage() {
+  const { temp, handleAddCount, handleSubCount, handleReset } =
+    useContext(CountContext);
   return (
     <main className="main-content">
       <div className="text-center">

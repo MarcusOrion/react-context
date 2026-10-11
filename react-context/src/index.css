@@ -32,3 +32,8 @@
     border-top: 2px solid #dee2e6;
   }
 }
+
+button.temp:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

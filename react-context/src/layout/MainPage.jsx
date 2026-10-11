@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import CountContext from "../contenxts/CountContext";
 
 export default function MainPage() {
@@ -10,23 +10,23 @@ export default function MainPage() {
         <h1 className="fw-bold fs-4">Counter</h1>
         <div className="display-1">{temp} °C</div>
         <div className="btn-group mt-3">
-          <div
-            className="btn btn-info"
+          <button
+            className="temp btn btn-info"
             onClick={handleSubCount}
-            disabled={temp < 16}
+            disabled={temp <= 16}
           >
             Sub
-          </div>
-          <div className="btn btn-warning" onClick={handleReset}>
+          </button>
+          <button className="btn btn-warning" onClick={handleReset}>
             Reset
-          </div>
-          <div
-            className="btn btn-info"
+          </button>
+          <button
+            className="temp btn btn-info"
             onClick={handleAddCount}
-            disabled={temp > 28}
+            disabled={temp >= 28}
           >
             Add
-          </div>
+          </button>
         </div>
       </div>
     </main>

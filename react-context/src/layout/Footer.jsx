@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import CountContext from "../contenxts/CountContext";
+import { useCountContext } from "../contenxts/CountContext";
 
 export default function Footer() {
-  const { temp } = useContext(CountContext);
+  const { temp } = useCountContext();
   return (
     <footer className="d-flex flex-column align-items-center">
       <p className="mb-1">Lorem Ipsum &copy; 2026</p>

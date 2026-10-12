@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import CountContext from "../contenxts/CountContext";
+import { useCountContext } from "../contenxts/CountContext";
 
 export default function Sidebar() {
-  const { handleReset } = useContext(CountContext);
+  const { handleReset } = useCountContext();
 
   return (
     <aside className="app-sidebar">

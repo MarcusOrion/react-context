@@ -2,8 +2,7 @@ import Header from "./components/layout/header";
 import Footer from "./layout/Footer";
 import MainPage from "./layout/MainPage";
 import Sidebar from "./layout/Sidebar";
-import CountContext from "./contenxts/CountContext";
-import { useState } from "react";
+import CountContextProvider from "./contenxts/CountContext";
 
 /* 
 Creare una piccola web app in React con la struttura simile a quella vista a lezione: 
@@ -27,36 +26,16 @@ Bonus
     
     Adattare ultimo esercizio assegnato (React Context API) con context , provider e custom hook in un file dedicato.*/
 function App() {
-  const [temp, setTemp] = useState(20);
-
-  function handleAddCount() {
-    setTemp(temp < 28 ? temp + 1 : temp);
-  }
-
-  function handleReset() {
-    setTemp(20);
-  }
-
-  function handleSubCount() {
-    setTemp(temp > 16 ? temp - 1 : temp);
-  }
   return (
     <div className="app-shell">
-      <CountContext.Provider
-        value={{
-          temp,
-          handleAddCount,
-          handleReset,
-          handleSubCount,
-        }}
-      >
+      <CountContextProvider>
         <Header />
         <div className="page-content">
           <Sidebar />
           <MainPage />
         </div>
         <Footer />
-      </CountContext.Provider>
+      </CountContextProvider>
     </div>
   );
 }
